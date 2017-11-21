@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Graph
 {
+    /**
+     * Dijkstra's algorithm
+     */
     public sealed class SingleSourceShortestPath
     {
         private readonly IGraph _graph;

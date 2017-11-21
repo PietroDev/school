@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace Graph
 {
+    /**
+     * Floyd–Warshall algorithm
+     */
     public sealed class AllPairShortestPath
     {
         private readonly IGraph _graph;
