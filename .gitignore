@@ -7,6 +7,8 @@
 packages/
 TestResults/
 
+# Visual Studio 2015/2017 cache/options directory
+.vs/
 
 # globs
 Makefile.in
@@ -28,7 +30,6 @@ autom4te.cache/
 tarballs/
 test-results/
 Thumbs.db
-/.vs
 
 # Mac bundle stuff
 *.dmg
