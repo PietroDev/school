@@ -9,6 +9,7 @@ namespace GraphConsoleApp
     {
         static void Main(string[] args)
         {
+
             string path = @"xml/graph.xml";
             IGraph g = new Graph.Core.Library.Graph();
             g.CreateFromXmlDocument(path);
