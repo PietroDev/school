@@ -7,7 +7,7 @@ using Graph.Core.Library;
 
 namespace Graph.Helpers.Library
 {
-    public static class GraphHelper
+    public static class GraphExtensions
     {
         public static void CreateFromXmlDocument(this IGraph g, string file) {
             XDocument doc = XDocument.Load(file);
