@@ -7,7 +7,7 @@ namespace Graph
     {
         public static void Main(string[] args)
         {
-            string file = @"..\..\graph.xml";
+            string file = @"graph.xml";
             IGraph g = new Graph();
             GraphMLReader.CreateFromXmlDocument(g, file);
             IVertex[] vs = g.Vertices.ToArray();

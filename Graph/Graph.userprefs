@@ -1,5 +1,12 @@
-﻿<Properties StartupConfiguration="{717A7239-3AD0-4D48-8804-A5A2349580A0}|Default">
-  <MonoDevelop.Ide.Workbench />
+﻿<Properties StartupConfiguration="{FC7A513C-76AB-41B5-BF3C-9C29A9781F3F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="algo/SingleSourceShortestPath.cs">
+    <Files>
+      <File FileName="Program.cs" Line="10" Column="29" />
+      <File FileName="algo/AllPairShortestPath.cs" Line="1" Column="1" />
+      <File FileName="lib/GraphMLReader.cs" Line="13" Column="1" />
+      <File FileName="algo/SingleSourceShortestPath.cs" Line="46" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

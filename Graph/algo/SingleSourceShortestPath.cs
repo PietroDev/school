@@ -39,11 +39,12 @@ namespace Graph
             queue.Enqueue(start);
             this[start] = 0;
             visited.Add(start);
-            
+
+            IVertex p;
             while (queue.Count > 0)
             {
                 IVertex v = queue.Dequeue();
-                IVertex p = parentQueue.Count == 0 ? null : parentQueue.Dequeue();
+                parentQueue.TryDequeue(out p);
                 foreach (IVertex u in _graph.AdjacentOf(v))
                 {
                     if (visited.Contains(u))
