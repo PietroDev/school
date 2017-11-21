@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Graph.Core.Library\Graph.Core.Library.csproj" />
+    <ProjectReference Include="..\Graph.Helpers.Library\Graph.Helpers.Library.csproj" />
+  </ItemGroup>
+
+</Project>
