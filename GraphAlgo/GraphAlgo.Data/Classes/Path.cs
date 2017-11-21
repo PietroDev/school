@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GraphAlgo.Library;
 
-namespace Graph.Core.Library
+namespace GraphAlgo.Data
 {
     public sealed class Path
     {
@@ -16,10 +17,7 @@ namespace Graph.Core.Library
         {
             get
             {
-                double c = 0;
-                foreach (IEdge e in _edges)
-                    c += e.Weight;
-                return c;
+                return Edges.Sum(e => e.Weight);
             }
         }
 

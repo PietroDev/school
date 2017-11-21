@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using GraphAlgo.Library;
 
-namespace Graph.Core.Library
+namespace GraphAlgo.Data
 {
     /**
      * Dijkstra's algorithm
@@ -43,11 +44,10 @@ namespace Graph.Core.Library
             this[start] = 0;
             visited.Add(start);
 
-            IVertex p;
             while (queue.Count > 0)
             {
                 IVertex v = queue.Dequeue();
-                parentQueue.TryDequeue(out p);
+                IVertex p = parentQueue.Count > 0 ? parentQueue.Dequeue() : null;
                 foreach (IVertex u in _graph.AdjacentOf(v))
                 {
                     if (visited.Contains(u))

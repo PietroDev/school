@@ -1,8 +1,9 @@
-﻿namespace Graph.Core.Library
+﻿using GraphAlgo.Library;
+
+namespace GraphAlgo.Data
 {
     public class Edge : Position, IEdge
     {
-
         public IVertex Start { get; set; }
 
         public IVertex End { get; set; }

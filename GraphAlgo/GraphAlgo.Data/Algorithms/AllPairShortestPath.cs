@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GraphAlgo.Library;
 
-namespace Graph.Core.Library
+namespace GraphAlgo.Data
 {
     /**
      * Floyd–Warshall algorithm
@@ -68,7 +69,7 @@ namespace Graph.Core.Library
                     }
         }
 
-        public Path ShortestPath(IVertex source, IVertex target)
+        public Path FindShortestPath(IVertex source, IVertex target)
         {
             int si = _vertexIndex[source];
             int ti = _vertexIndex[target];

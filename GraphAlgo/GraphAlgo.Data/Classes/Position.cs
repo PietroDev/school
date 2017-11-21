@@ -1,4 +1,6 @@
-﻿namespace Graph.Core.Library
+﻿using GraphAlgo.Library;
+
+namespace GraphAlgo.Data
 {
     public abstract class Position : IPosition
     {

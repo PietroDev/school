@@ -1,4 +1,4 @@
-﻿namespace Graph.Core.Library
+﻿namespace GraphAlgo.Library
 {
     public interface IPosition
     {

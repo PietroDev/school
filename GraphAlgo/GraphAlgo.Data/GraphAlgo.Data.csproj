@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Algorithms\" />
+    <Folder Include="Classes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GraphAlgo.Library\GraphAlgo.Library.csproj" />
+  </ItemGroup>
+</Project>

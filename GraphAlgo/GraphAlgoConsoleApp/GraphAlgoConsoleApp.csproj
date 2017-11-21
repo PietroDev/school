@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Graph.Core.Library\Graph.Core.Library.csproj" />
-    <ProjectReference Include="..\Graph.Helpers.Library\Graph.Helpers.Library.csproj" />
+    <ProjectReference Include="..\GraphAlgo.Data\GraphAlgo.Data.csproj" />
+    <ProjectReference Include="..\GraphAlgo.Library\GraphAlgo.Library.csproj" />
   </ItemGroup>
 
 </Project>

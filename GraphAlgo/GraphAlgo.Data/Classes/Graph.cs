@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GraphAlgo.Library;
 
-namespace Graph.Core.Library
+namespace GraphAlgo.Data
 {
     public class Graph : IGraph
     {

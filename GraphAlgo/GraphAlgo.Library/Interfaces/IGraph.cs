@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Graph.Core.Library
+namespace GraphAlgo.Library
 {
     public interface IGraph
     {
-
         IVertex NewVertex(string id);
 
         IEdge NewEdge(string id, IVertex source, IVertex target);
