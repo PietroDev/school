@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using GraphAlgo.Data;
 using GraphAlgo.Library;
 
@@ -12,10 +11,8 @@ namespace GraphConsoleApp
             string path = @"xml/graph.xml";
             IGraph g = new Graph();
             g.CreateFromXmlDocument(path);
-            IVertex[] vs = g.Vertices.ToArray();
-            Random random = new Random();
-            IVertex v = vs[random.Next(vs.Length)];
-            IVertex w = vs[random.Next(vs.Length)];
+            IVertex v = g.Vertices.FindByID("n0");
+            IVertex w = g.Vertices.FindByID("n5");
 
             AllPairShortestPath ap = new AllPairShortestPath(g);
             ap.Compute();
