@@ -1,65 +1,70 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using GraphAlgo.Library;
 
 namespace GraphAlgo.Data
 {
     /**
-     * Dijkstra's algorithm
+     * Dijkstra's algorithm O((E+V)logV)
      */
     public sealed class SingleSourceShortestPath
     {
         private readonly IGraph _graph;
-        private IDictionary<IVertex, int> _maxPaths = new Dictionary<IVertex, int>();
+        private readonly IVertex _start;
+        private IDictionary<IVertex, IVertex> _parents = new Dictionary<IVertex, IVertex>();
 
-        public int this[IVertex v]
-        {
-            get
-            {
-                return _maxPaths[v];
-            }
-            private set
-            {
-                _maxPaths[v] = value;
-            }
-        }
-
-        public SingleSourceShortestPath(IGraph graph)
+        public SingleSourceShortestPath(IGraph graph, IVertex start)
         {
             _graph = graph;
+            _start = start;
         }
 
-        public void Compute(IVertex start)
+        public void Compute()
         {
-            Queue<IVertex> queue = new Queue<IVertex>();
-            HashSet<IVertex> visited = new HashSet<IVertex>();
-            Queue<IVertex> parentQueue = new Queue<IVertex>();
-            _maxPaths.Clear();
+            IDictionary<IVertex, double> distances = new Dictionary<IVertex, double>();
+            IList<IVertex> nodes = new List<IVertex>();
+            ISet<IVertex> visited = new HashSet<IVertex>();
+            _parents.Clear();
 
             foreach (IVertex v in _graph.Vertices)
             {
-                this[v] = Int32.MaxValue;
+                distances.Add(v, Double.PositiveInfinity);
+                nodes.Add(v);
             }
-            queue.Enqueue(start);
-            this[start] = 0;
-            visited.Add(start);
+            distances[_start] = 0;
 
-            while (queue.Count > 0)
+            while (nodes.Count > 0)
             {
-                IVertex v = queue.Dequeue();
-                IVertex p = parentQueue.Count > 0 ? parentQueue.Dequeue() : null;
-                foreach (IVertex u in _graph.AdjacentOf(v))
-                {
-                    if (visited.Contains(u))
-                        break;
-                    if (u == p)
+                // May be better with PriorityQueue
+                nodes.OrderBy(w => distances[w]);
+                IVertex u = nodes[0];
+                nodes.RemoveAt(0);
+                visited.Add(u);
+
+                foreach (IVertex v in _graph.GetAdjacentOf(u)) {
+                    if (visited.Contains(v))
                         continue;
-                    queue.Enqueue(u);
-                    parentQueue.Enqueue(v);
-                    this[u] = this[v] + 1;
-                    visited.Add(u);
+                    IEdge e = _graph.FindEdgeConnecting(u, v);
+                    double dist = distances[u] + e.Weight;
+                    if (dist < distances[v]) {
+                        distances[v] = dist;
+                        _parents[v] = u;
+                    }
                 }
             }
+        }
+
+        public IPath GetShortestPath(IVertex target) {
+            Path path = new Path(target);
+            IVertex v = target;
+            do
+            {
+                IVertex p = _parents[v];
+                path.AddEdgeFirst(_graph.FindEdgeConnecting(p, v));
+                v = p;
+            } while (v != _start);
+            return path;
         }
     }
 }

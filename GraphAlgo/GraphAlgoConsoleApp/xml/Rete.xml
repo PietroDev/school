@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="graphLabel" for="graph" attr.name="label" attr.type="java.lang.String"/>
+  <key id="label" for="node" attr.name="label" attr.type="string"/>
+  <key id="weight" for="edge" attr.name="weight" attr.type="double">1</key>
+  <graph edgedefault="undirected">
+    <data key="graphLabel">Rete</data>
+    <node id="A"/>
+    <node id="B"/>
+    <node id="C"/>
+    <node id="D"/>
+    <node id="E"/>
+    <node id="F"/>
+    <edge id="E0" source="A" target="B">
+      <data key="weight">3.0</data>
+    </edge>
+    <edge id="E1" source="A" target="C">
+      <data key="weight">1.0</data>
+    </edge>
+    <edge id="E2" source="A" target="D">
+      <data key="weight">6.0</data>
+    </edge>
+    <edge id="E3" source="B" target="C">
+      <data key="weight">2.0</data>
+    </edge>
+    <edge id="E4" source="B" target="D">
+      <data key="weight">3.0</data>
+    </edge>
+    <edge id="E5" source="C" target="D">
+      <data key="weight">3.0</data>
+    </edge>
+    <edge id="E6" source="C" target="E">
+      <data key="weight">1.0</data>
+    </edge>
+    <edge id="E7" source="D" target="E">
+      <data key="weight">2.0</data>
+    </edge>
+    <edge id="E8" source="D" target="F">
+      <data key="weight">6.0</data>
+    </edge>
+    <edge id="E9" source="E" target="F">
+      <data key="weight">3.0</data>
+    </edge>
+  </graph>
+</graphml>

@@ -5,15 +5,15 @@ using GraphAlgo.Library;
 
 namespace GraphAlgo.Data
 {
-    public sealed class Path
+    public sealed class Path : IPath
     {
-        private readonly IList<IEdge> _edges = new List<IEdge>();
+        private readonly List<IEdge> _edges = new List<IEdge>();
 
         public IVertex Start { get; private set; }
 
         public IVertex End { get; private set; }
 
-        public double Cost
+        public double TotalWeight
         {
             get
             {
@@ -35,12 +35,19 @@ namespace GraphAlgo.Data
             End = start;
         }
 
-        public void AddEdge(IEdge e)
+        public void AddEdgeLast(IEdge e)
         {
             if (!e.IsEdgeOf(End))
                 throw new ArgumentException("Wrong edge");
             _edges.Add(e);
             End = e.GetOppositeOf(End);
+        }
+
+        public void AddEdgeFirst(IEdge e) {
+            if (!e.IsEdgeOf(Start))
+                throw new ArgumentException("Wrong edge");
+            _edges.Insert(0, e);
+            Start = e.GetOppositeOf(Start);
         }
 
         public override string ToString()

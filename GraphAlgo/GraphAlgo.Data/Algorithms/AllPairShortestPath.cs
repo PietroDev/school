@@ -6,7 +6,7 @@ using GraphAlgo.Library;
 namespace GraphAlgo.Data
 {
     /**
-     * Floyd–Warshall algorithm
+     * Floyd–Warshall algorithm O(V^3)
      */
     public sealed class AllPairShortestPath
     {
@@ -27,7 +27,7 @@ namespace GraphAlgo.Data
             _vertexIndex.Clear();
 
             for (int i = 0; i < _vertices.Length; i++)
-                _vertexIndex[_vertices[i]] = i;
+                _vertexIndex.Add(_vertices[i], i);
 
             _predecessors = new int[_vertices.Length, _vertices.Length];
             _costs = new double[_vertices.Length, _vertices.Length];
@@ -69,7 +69,7 @@ namespace GraphAlgo.Data
                     }
         }
 
-        public Path FindShortestPath(IVertex source, IVertex target)
+        public IPath GetShortestPath(IVertex source, IVertex target)
         {
             int si = _vertexIndex[source];
             int ti = _vertexIndex[target];
@@ -79,7 +79,7 @@ namespace GraphAlgo.Data
             if (source != target)
             {
                 FillPath(p, si, ti);
-                p.AddEdge(_graph.FindEdgeConnecting(p.End, target));
+                p.AddEdgeLast(_graph.FindEdgeConnecting(p.End, target));
             }
             return p;
         }
@@ -93,7 +93,7 @@ namespace GraphAlgo.Data
                 return;
 
             FillPath(p, start, mid);
-            p.AddEdge(_graph.FindEdgeConnecting(p.End, _vertices[mid]));
+            p.AddEdgeLast(_graph.FindEdgeConnecting(p.End, _vertices[mid]));
             if (mid != _predecessors[mid, end])
                 FillPath(p, mid, end);
         }

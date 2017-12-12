@@ -13,7 +13,7 @@ namespace GraphAlgo.Library
 
         IQueryable<IEdge> Edges { get; }
 
-        IEnumerable<IVertex> AdjacentOf(IVertex v);
+        IEnumerable<IVertex> GetAdjacentOf(IVertex v);
 
         IEnumerable<IEdge> EdgesOf(IVertex v);
 

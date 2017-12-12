@@ -8,16 +8,16 @@ namespace GraphConsoleApp
     {
         static void Main(string[] args)
         {
-            string path = @"xml/graph.xml";
+            string path = @"xml/Rete.xml";
             IGraph g = new Graph();
             g.CreateFromXmlDocument(path);
-            IVertex v = g.Vertices.FindByID("n0");
-            IVertex w = g.Vertices.FindByID("n5");
+            IVertex v = g.Vertices.FindByID("B");
+            IVertex w = g.Vertices.FindByID("F");
 
-            AllPairShortestPath ap = new AllPairShortestPath(g);
-            ap.Compute();
-            Path p = ap.FindShortestPath(v, w);
-            Console.WriteLine(p);
+            SingleSourceShortestPath sp = new SingleSourceShortestPath(g, v);
+            sp.Compute();
+            IPath p = sp.GetShortestPath(w);
+            Console.WriteLine($"{p} (weight: {p.TotalWeight})");
             Console.ReadLine();
         }
     }

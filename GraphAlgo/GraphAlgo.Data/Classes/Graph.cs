@@ -43,7 +43,7 @@ namespace GraphAlgo.Data
             return e;
         }
 
-        public IEnumerable<IVertex> AdjacentOf(IVertex v)
+        public IEnumerable<IVertex> GetAdjacentOf(IVertex v)
         {
             return EdgesOf(v).Select(e => e.GetOppositeOf(v));
         }
