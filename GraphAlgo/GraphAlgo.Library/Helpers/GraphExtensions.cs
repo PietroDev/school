@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -6,7 +7,7 @@ namespace GraphAlgo.Library
 {
     public static class GraphExtensions
     {
-        public static P FindByID<P>(this IQueryable<P> q, string id) where P : IPosition
+        public static P FindByID<P>(this IEnumerable<P> q, string id) where P : IPosition
         {
             return q.FirstOrDefault(p => p.ID == id);
         }

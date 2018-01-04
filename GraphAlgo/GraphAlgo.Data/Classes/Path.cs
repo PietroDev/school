@@ -21,11 +21,11 @@ namespace GraphAlgo.Data
             }
         }
 
-        public IQueryable<IEdge> Edges
+        public IEnumerable<IEdge> Edges
         {
             get
             {
-                return _edges.AsQueryable();
+                return _edges;
             }
         }
 

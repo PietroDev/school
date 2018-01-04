@@ -9,9 +9,9 @@ namespace GraphAlgo.Library
 
         IEdge NewEdge(string id, IVertex source, IVertex target);
 
-        IQueryable<IVertex> Vertices { get; }
+        IEnumerable<IVertex> Vertices { get; }
 
-        IQueryable<IEdge> Edges { get; }
+        IEnumerable<IEdge> Edges { get; }
 
         IEnumerable<IVertex> GetAdjacentOf(IVertex v);
 

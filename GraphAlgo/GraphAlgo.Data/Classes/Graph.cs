@@ -9,11 +9,11 @@ namespace GraphAlgo.Data
         private readonly IList<Edge> _edges = new List<Edge>();
         private readonly IList<Vertex> _vertices = new List<Vertex>();
 
-        public IQueryable<IVertex> Vertices
+        public IEnumerable<IVertex> Vertices
         {
             get
             {
-                return _vertices.AsQueryable();
+                return _vertices;
             }
         }
 
@@ -24,11 +24,11 @@ namespace GraphAlgo.Data
             return v;
         }
 
-        public IQueryable<IEdge> Edges
+        public IEnumerable<IEdge> Edges
         {
             get
             {
-                return _edges.AsQueryable();
+                return _edges;
             }
         }
 

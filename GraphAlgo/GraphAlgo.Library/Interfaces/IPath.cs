@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GraphAlgo.Library
@@ -9,7 +10,7 @@ namespace GraphAlgo.Library
 
         IVertex End { get; }
 
-        IQueryable<IEdge> Edges { get; }
+        IEnumerable<IEdge> Edges { get; }
 
         double TotalWeight { get; }
 
