@@ -17,7 +17,13 @@ namespace GraphAlgo.Data
         {
             get
             {
-                return Edges.Sum(e => e.Weight);
+                double w = 0;
+                foreach (IEdge e in Edges)
+                {
+                    w += e.Weight;
+                }
+                return w;
+                // LINQ: return Edges.Sum(e => e.Weight);
             }
         }
 
@@ -53,7 +59,6 @@ namespace GraphAlgo.Data
         public override string ToString()
         {
             var resp = $"Path: [{Start}";
-
             if (Edges.Any())
             {
                 IVertex vertex = Start;

@@ -13,5 +13,10 @@ namespace GraphAlgo.Data
             ID = id;
             Label = ID;
         }
+
+        public override string ToString()
+        {
+            return Label;
+        }
     }
 }

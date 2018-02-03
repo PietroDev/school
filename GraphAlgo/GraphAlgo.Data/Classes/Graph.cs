@@ -34,28 +34,44 @@ namespace GraphAlgo.Data
 
         public IEdge NewEdge(string id, IVertex v1, IVertex v2)
         {
-            Edge e = new Edge(id)
-            {
-                Start = v1,
-                End = v2
-            };
+            Edge e = new Edge(id, v1, v2);
             _edges.Add(e);
             return e;
         }
 
         public IEnumerable<IVertex> GetAdjacentOf(IVertex v)
         {
-            return EdgesOf(v).Select(e => e.GetOppositeOf(v));
+            IList<IVertex> list = new List<IVertex>();
+            foreach (IEdge e in EdgesOf(v))
+            {
+                IVertex w = e.GetOppositeOf(v);
+                list.Add(w);
+            }
+            return list;
+            // LINQ: return EdgesOf(v).Select(e => e.GetOppositeOf(v));
         }
 
         public IEnumerable<IEdge> EdgesOf(IVertex v)
         {
-            return Edges.Where(e => e.IsEdgeOf(v));
+            IList<IEdge> list = new List<IEdge>();
+            foreach (IEdge e in Edges)
+            {
+                if (e.IsEdgeOf(v))
+                    list.Add(e);
+            }
+            return list;
+            // LINQ: return Edges.Where(e => e.IsEdgeOf(v));
         }
 
         public IEdge FindEdgeConnecting(IVertex v, IVertex u)
         {
-            return Edges.Where(e => e.IsEdgeOf(v) && e.IsEdgeOf(u)).SingleOrDefault();
+            foreach (IEdge e in Edges)
+            {
+                if (e.IsEdgeOf(v) && e.IsEdgeOf(u))
+                    return e;
+            }
+            return null;
+            // LINQ: return Edges.Where(e => e.IsEdgeOf(v) && e.IsEdgeOf(u)).SingleOrDefault();
         }
     }
 }

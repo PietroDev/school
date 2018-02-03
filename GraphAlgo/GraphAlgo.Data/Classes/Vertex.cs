@@ -7,10 +7,5 @@ namespace GraphAlgo.Data
         public Vertex(string id) : base(id)
         {
         }
-
-        public override string ToString()
-        {
-            return Label;
-        }
     }
 }
