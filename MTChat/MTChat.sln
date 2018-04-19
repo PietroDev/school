@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatClient", "ChatClient\Ch
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatServer", "ChatServer\ChatServer.csproj", "{A43B0FEE-8E50-4A98-9EA7-A184A68C6BC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfChat", "WpfChat\WpfChat.csproj", "{818159B4-7F96-4DA0-8A18-AE1F275C0472}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{A43B0FEE-8E50-4A98-9EA7-A184A68C6BC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A43B0FEE-8E50-4A98-9EA7-A184A68C6BC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A43B0FEE-8E50-4A98-9EA7-A184A68C6BC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{818159B4-7F96-4DA0-8A18-AE1F275C0472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{818159B4-7F96-4DA0-8A18-AE1F275C0472}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{818159B4-7F96-4DA0-8A18-AE1F275C0472}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{818159B4-7F96-4DA0-8A18-AE1F275C0472}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
